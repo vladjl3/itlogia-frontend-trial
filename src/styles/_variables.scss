@@ -1,4 +1,4 @@
-/* breakpoints */
+//  breakpoints
 $grid-breakpoints: (
   xs: 320px,
   sm: 480px,
@@ -10,3 +10,12 @@ $grid-breakpoints: (
 $container-width: 1200px;
 $container-padding: 24px;
 $container-side-padding: $container-padding / 2;
+
+
+// colors
+
+$logo-color: #ffc468;
+$primary-light-color: #ffaf18;
+$primary-dark-color: #b99050;
+$black-color: #020303;
+$link-color: #a46b00;

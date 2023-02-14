@@ -24,6 +24,12 @@
   }
 }
 
+@mixin screen-lgplus-max {
+  @media only screen and (max-width: map_get($grid-breakpoints, "lgplus")) {
+    @content;
+  }
+}
+
 @mixin screen-xlg-max {
   @media only screen and (max-width: map_get($grid-breakpoints, "xlg")) {
     @content;

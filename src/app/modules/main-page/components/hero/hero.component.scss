@@ -1,0 +1,70 @@
+@import "variables";
+@import "utils";
+
+.section-hero {
+  display: flex;
+  align-items: center;
+  padding-top: 134px;
+  padding-bottom: 134px;
+  @include screen-lg-max {
+    flex-wrap: wrap-reverse;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    row-gap: 48px;
+  }
+		&__item {}
+		&__title {
+      font-size: 45px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      @include screen-lgplus-max {
+        font-size: 36px;
+      }
+    }
+		&__title--light {
+      color: $primary-light-color;
+    }
+		&__benefits {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 48px;
+      @include screen-md-max {
+        gap: 38px;
+        row-gap: 48px;
+      }
+    }
+		&__benefits-item {
+      flex: 0 0 50%;
+      display: flex;
+      @include screen-md-max {
+        flex:auto;
+      }
+    }
+		&__benefits-icon {
+      height: 60px;
+      width: 60px;
+    }
+		&__benefits-item-content {
+      margin-left: 16px;
+    }
+		&__benefits-item-title {
+      color: $primary-light-color;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 1px;
+    }
+		&__benefits-item-text {
+      max-width: 228px;
+    }
+		&__cta {
+      margin-top: 60px;
+    }
+    &__image {
+      @include screen-lgplus-max {
+        max-width: 400px;
+      }
+      @include screen-md-max {
+        max-width: 100%;
+      }
+    }
+}

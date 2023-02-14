@@ -1,6 +1,7 @@
 @import "normalize-override";
 @import "fonts";
 @import "utils";
+@import "variables";
 
 *,
 *::before,
@@ -10,8 +11,8 @@
 
 body {
   font-family: 'Muller', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #333;
+  font-size: 16px;
+  color: $primary-dark-color;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

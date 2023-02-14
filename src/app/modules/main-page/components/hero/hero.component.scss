@@ -20,6 +20,9 @@
       @include screen-lgplus-max {
         font-size: 36px;
       }
+      @include screen-sm-max {
+        font-size: 28px;
+      }
     }
 		&__title--light {
       color: $primary-light-color;
@@ -58,6 +61,7 @@
     }
 		&__cta {
       margin-top: 60px;
+      max-width: 224px;
     }
     &__image {
       @include screen-lgplus-max {

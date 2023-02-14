@@ -1,0 +1,91 @@
+@import "variables";
+@import "utils";
+
+.section-order-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 64px;
+  padding-top: 20px;
+  padding-bottom: 105px;
+
+  @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+    gap: 48px;
+    justify-content: flex-start;
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, 'lgplus')) {
+    align-items: flex-end;
+    gap: 80px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
+      &:first-child {
+        width: 384px;
+      }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+      width: 330px;
+    }
+  }
+
+  &__title {
+    font-size: 35px;
+    font-weight: 800;
+  }
+  &__title--light {
+    color: $primary-light-color;
+  }
+  &__text {
+    margin-top: 65px;
+    line-height: 24px;
+  }
+  &__img-group {
+    position: relative;
+  }
+
+  &__img {
+    max-width: 100%;
+    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+      max-width: 316px;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, 'lgplus')) {
+      position: absolute;
+      bottom: 0;
+      right: -258px;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, 'xlg')) {
+      position: absolute;
+      right: -410px;
+      max-width: 410px;
+    }
+  }
+}
+.order-form {
+  &__input {
+    padding: 0 22px;
+    line-height: 45px;
+    outline: none;
+    border: 1px solid $primary-dark-color;
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+  &__btn {
+    margin-top: 24px;
+
+  }
+}

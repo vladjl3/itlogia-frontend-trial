@@ -5,13 +5,15 @@ import { MainPageRoutingModule } from './main-page-routing.module';
 import { MainPageComponent } from './main-page.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ProductsComponent } from './components/products/products.component';
+import { OrderFormComponent } from './components/order-form/order-form.component';
 
 
 @NgModule({
   declarations: [
     MainPageComponent,
     HeroComponent,
-    ProductsComponent
+    ProductsComponent,
+    OrderFormComponent
   ],
   imports: [
     CommonModule,

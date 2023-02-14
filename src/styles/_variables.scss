@@ -6,3 +6,7 @@ $grid-breakpoints: (
   lg: 992px,
   xlg: 1440px,
 );
+
+$container-width: 1200px;
+$container-padding: 24px;
+$container-side-padding: $container-padding / 2;

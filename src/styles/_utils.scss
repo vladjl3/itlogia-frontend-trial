@@ -1,0 +1,21 @@
+@import "variables";
+@import "./mixins/screen";
+
+.container {
+  max-width: $container-width + $container-padding;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $container-side-padding;
+
+  @include screen-lg-max {
+    max-width: map_get($grid-breakpoints, "lg") - $container-padding;
+  }
+
+  @include screen-md-max {
+    max-width: map_get($grid-breakpoints, "md") - $container-padding;
+  }
+
+  @include screen-sm-max {
+    max-width: map_get($grid-breakpoints, "sm") - $container-padding;
+  }
+}

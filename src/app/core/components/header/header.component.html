@@ -1,26 +1,37 @@
-<header class="container section section-header">
-  <div class="section-header__item">
-    <img class="section-header__logo" />
-    <span class="section-header__logo-text">Pizza cheff</span>
-  </div>
-  <div class="section-header__item">
-    <nav class="section-header__menu">
-      <ul>
-        <li class="section-header__menu-item">Пиццы</li>
-        <li class="section-header__menu-item">Напитки</li>
-        <li class="section-header__menu-item">Доставка и оплата</li>
-        <li class="section-header__menu-item">Контакты</li>
+<header class="section section-header">
+  <div class="container section-header__body">
+    <div class="section-header__item">
+      <img src="assets/images/header__logo.png" class="section-header__logo" />
+      <span class="section-header__logo-text"
+        >Pizza<br />
+        cheff</span
+      >
+    </div>
+    <nav class="section-header__item">
+      <ul class="section-header__menu" [ngClass]="{ 'is-active': isActive }">
+        <li class="section-header__menu-item">
+          <a href="" class="section-header__menu-item-link">Пиццы</a>
+        </li>
+        <li class="section-header__menu-item">
+          <a href="" class="section-header__menu-item-link">Напитки</a>
+        </li>
+        <li class="section-header__menu-item">
+          <a href="" class="section-header__menu-item-link">Доставка и оплата</a>
+        </li>
+        <li class="section-header__menu-item">
+          <a href="" class="section-header__menu-item-link">Контакты</a>
+        </li>
       </ul>
+      <button
+        class="hamburger hamburger--spin section-header__burger"
+        type="button"
+        (click)="onClick()"
+        [ngClass]="{ 'is-active': isActive }"
+      >
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
     </nav>
-    <button
-      class="hamburger hamburger--spin"
-      type="button"
-      (click)="onClick()"
-      [ngClass]="{ 'is-active': isActive }"
-    >
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
   </div>
 </header>

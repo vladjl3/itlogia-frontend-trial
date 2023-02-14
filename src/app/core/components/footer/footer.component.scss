@@ -1,0 +1,13 @@
+@import "variables";
+
+.section-footer {
+  border-top: 1px solid #{$primary-dark-color + '50'};
+  border
+		&__body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+		&__copy {
+      text-transform: uppercase;
+    }
+}

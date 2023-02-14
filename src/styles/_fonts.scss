@@ -6,7 +6,7 @@
     url("../assets/fonts/MullerRegular.woff2") format("woff2"),
     url("../assets/fonts/MullerRegular.woff") format("woff"),
     url("../assets/fonts/MullerRegular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -18,6 +18,30 @@
     url("../assets/fonts/MullerBold.woff2") format("woff2"),
     url("../assets/fonts/MullerBold.woff") format("woff"),
     url("../assets/fonts/MullerBold.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: url("../assets/fonts/MullerExtraBold.eot");
+  src: local("Muller Extra Bold"), local("MullerExtraBold"),
+    url("../assets/fonts/MullerExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/MullerExtraBold.woff2") format("woff2"),
+    url("../assets/fonts/MullerExtraBold.woff") format("woff"),
+    url("../assets/fonts/MullerExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: url("../assets/fonts/MullerBlack.eot");
+  src: local("Muller Black"), local("MullerBlack"),
+    url("../assets/fonts/MullerBlack.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/MullerBlack.woff2") format("woff2"),
+    url("../assets/fonts/MullerBlack.woff") format("woff"),
+    url("../assets/fonts/MullerBlack.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
 }

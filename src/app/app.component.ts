@@ -7,9 +7,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "itlogia-frontend-trial";
-  isActive: boolean = false;
-
-  onClick(): void {
-    this.isActive = !this.isActive;
-  }
 }

@@ -49,6 +49,7 @@ export class OrderFormComponent {
     this.orderService.createOrder(this.order).subscribe((res: CreateOrderResponse) => {
       console.log(res);
       this.createOrderResponse.emit(res);
+      this.orderFormGroup.reset();
     });
   }
 

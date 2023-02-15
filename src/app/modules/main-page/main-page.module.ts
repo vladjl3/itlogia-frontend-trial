@@ -6,6 +6,7 @@ import { MainPageComponent } from './main-page.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ProductsComponent } from './components/products/products.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { OrderFormComponent } from './components/order-form/order-form.component
   ],
   imports: [
     CommonModule,
-    MainPageRoutingModule
+    MainPageRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class MainPageModule { }

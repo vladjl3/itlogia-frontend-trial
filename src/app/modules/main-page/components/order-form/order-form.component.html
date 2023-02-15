@@ -11,10 +11,13 @@
       голодный!
     </div>
   </div>
-  <form action="/" class="section-order-form__item section-order-form__form order-form">
-    <input placeholder="Ваше имя" type="text" class="order-form__input" />
-    <input placeholder="Адрес доставки" type="text" class="order-form__input" />
-    <input placeholder="Телефон" type="number" class="order-form__input" />
+  <form action="/" [formGroup]="orderFormGroup" (ngSubmit)="sendForm()" class="section-order-form__item section-order-form__form order-form">
+    <input formControlName="name" placeholder="Ваше имя" type="text" class="order-form__input" #nameInput (input)="onInput(nameInput.value)" />
+    <span *ngIf="name && name.invalid && name.touched" class="error">Имя обязательно для заполнения</span>
+    <input formControlName="address" placeholder="Адрес доставки" type="text" class="order-form__input" />
+    <span *ngIf="address && address.invalid && address.touched" class="error">Адрес доставки обязателен для заполнения</span>
+    <input formControlName="phone" placeholder="Телефон" type="number" class="order-form__input" />
+    <span *ngIf="phone && phone.invalid && phone.touched" class="error">Телефон обязателен для заполнения</span>
     <button class="btn order-form__btn" type="submit">Оформить заказ</button>
   </form>
   <div class="section-order-form__item section-order-form__img-group">

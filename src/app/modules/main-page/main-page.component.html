@@ -1,5 +1,22 @@
 <main class="container">
   <app-hero></app-hero>
   <app-products [products]="pizzzaList"></app-products>
-  <app-order-form></app-order-form>
+  <app-order-form (createOrderResponse)="onOrderSent($event)"></app-order-form>
+  <ng-container *ngIf="popupVisible">
+    <div class="popup-overlay__container">
+      <div
+        class="popup-overlay__backdrop popup-overlay__backdrop--dark popup-overlay__backdrop--showing"
+      ></div>
+      <div class="popup-overlay__wrapper">
+        <div class="popup">
+          <button id="close" (click)="onClose()">×</button>
+          <h3 class="popup__title title">Спасибо!</h3>
+          <p class="popup__text">
+            {{ responseMessage }}
+          </p>
+          <a href="#" class="popup__btn btn" (click)="onClose()">Хорошо!</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </main>

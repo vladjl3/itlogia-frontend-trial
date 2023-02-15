@@ -1,0 +1,15 @@
+<div *ngIf="popupVisible" class="popup-overlay__container">
+  <div
+    class="popup-overlay__backdrop popup-overlay__backdrop--dark popup-overlay__backdrop--showing"
+  ></div>
+  <div class="popup-overlay__wrapper">
+    <div class="popup popup-after-pizza-image-click">
+      <button id="close" (click)="onClose()">×</button>
+      <img src="{{ popupImageProps }}" alt="" srcset="">
+      <p class="popup__text">
+        {{ popupMessageProps }}
+      </p>
+      <a rel="nofollow" class="popup__btn btn" (click)="onClose()">Посмотреть другие!</a>
+    </div>
+  </div>
+</div>

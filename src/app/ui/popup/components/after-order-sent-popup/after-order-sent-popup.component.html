@@ -1,0 +1,15 @@
+<div *ngIf="popupVisible" class="popup-overlay__container">
+  <div
+    class="popup-overlay__backdrop popup-overlay__backdrop--dark popup-overlay__backdrop--showing"
+  ></div>
+  <div class="popup-overlay__wrapper">
+    <div class="popup popup-after-order-sent">
+      <button id="close" (click)="onClose()">×</button>
+      <h3 class="popup__title title">Спасибо!</h3>
+      <p class="popup__text">
+        {{ popupMessageProps }}
+      </p>
+      <a rel="nofollow" class="popup__btn btn" (click)="onClose()">Хорошо!</a>
+    </div>
+  </div>
+</div>

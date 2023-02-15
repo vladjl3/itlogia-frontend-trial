@@ -1,0 +1,8 @@
+@import "utils";
+
+.popup-after-order-sent {
+  width: 420px; 
+  @include screen-sm-max {
+    width: 100%; 
+  }
+}

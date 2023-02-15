@@ -7,11 +7,11 @@
   &__title {
     font-size: 35px;
     font-weight: 700;
+    @include screen-sm-max {
+      font-size: 28px;
+    }
     &--centered {
       text-align: center;
-      @include screen-sm-max {
-        font-size: 28px;
-      }
     }
   }
   &__product-list {
@@ -26,6 +26,9 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  @include screen-md-max {
+    justify-content: center;
+  }
   &__item {
     width: 282px;
     min-height: 354px;
@@ -35,7 +38,7 @@
     justify-content: space-between;
     padding: 27px 20px 15px 20px;
     box-shadow: 0 3px 13.8px 1.2px rgba(152, 152, 152, 0.2);
-    @include screen-lg-max {
+    @include screen-md-max {
       width: 100%;
     }
   }

@@ -41,5 +41,7 @@
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }

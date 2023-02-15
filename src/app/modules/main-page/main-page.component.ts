@@ -14,8 +14,10 @@ export class MainPageComponent implements OnInit, OnDestroy {
   pizzzaList: Pizza[] = [];
   pizzaSubscription: Subscription = new Subscription();
 
-  popupVisible: boolean = false;
+  popupAfterPizzaImageClick: boolean = false;
+  popupAfterOrderSent: boolean = false;
   responseMessage: string = "";
+  pizzaImage: string = "";
 
   ngOnInit(): void {
     this.fetchProducts();
@@ -33,10 +35,12 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   onOrderSent(event: CreateOrderResponse): void {
     this.responseMessage = event.message;
-    this.popupVisible = true;
+    this.popupAfterOrderSent = true;
   }
 
-  onClose(): void {
-    this.popupVisible = false;
+  onPizzaImageClick(event: string): void {
+    this.popupAfterPizzaImageClick = true;
+    this.pizzaImage = event;
   }
+
 }

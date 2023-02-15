@@ -4,7 +4,12 @@
   </h2>
   <div class="section-products__product-list product-list">
     <div *ngFor="let pizza of productsProps" class="product-list__item">
-      <img src="{{ pizza.image }}" alt="" class="product-list__item-image" />
+      <img
+        src="{{ pizza.image }}"
+        alt=""
+        class="product-list__item-image"
+        (click)="onImageClick(pizza.image)"
+      />
       <div class="product-list__item-title product-list__item-title--centered">
         {{ pizza.name }}
       </div>

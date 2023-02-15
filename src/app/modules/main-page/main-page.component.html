@@ -1,22 +1,17 @@
 <main class="container">
   <app-hero></app-hero>
-  <app-products [products]="pizzzaList"></app-products>
+  <app-products [products]="pizzzaList" (pizzaImage)="onPizzaImageClick($event)"></app-products>
   <app-order-form (createOrderResponse)="onOrderSent($event)"></app-order-form>
-  <ng-container *ngIf="popupVisible">
-    <div class="popup-overlay__container">
-      <div
-        class="popup-overlay__backdrop popup-overlay__backdrop--dark popup-overlay__backdrop--showing"
-      ></div>
-      <div class="popup-overlay__wrapper">
-        <div class="popup">
-          <button id="close" (click)="onClose()">×</button>
-          <h3 class="popup__title title">Спасибо!</h3>
-          <p class="popup__text">
-            {{ responseMessage }}
-          </p>
-          <a href="#" class="popup__btn btn" (click)="onClose()">Хорошо!</a>
-        </div>
-      </div>
-    </div>
-  </ng-container>
+  <app-after-order-sent-popup
+    *ngIf="popupAfterOrderSent"
+    [popupMessage]="responseMessage"
+    [popupVisibleProps]="popupAfterOrderSent"
+    (popupClosed)="popupAfterOrderSent = $event"
+  ></app-after-order-sent-popup>
+  <app-after-pizza-image-click-popup
+    *ngIf="popupAfterPizzaImageClick"
+    [popupImage]="pizzaImage"
+    [popupVisibleProps]="popupAfterPizzaImageClick"
+    (popupClosed)="popupAfterPizzaImageClick = $event"
+  ></app-after-pizza-image-click-popup>
 </main>

@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, map, Observable, of } from "rxjs";
+import { catchError, Observable, of } from "rxjs";
 import { Pizza } from "../types/pizza.interface";
 
 @Injectable({

@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { OrderService } from "@app/services/order.service";
+import { CreateOrderResponse } from "@app/types/create-order-response.interface";
+import { Order } from "@app/types/order.interface";
 
 @Component({
   selector: "app-order-form",
@@ -8,11 +11,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderFormComponent {
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private orderService: OrderService) {
     this.createForm();
   }
 
+  order!: Order;
   orderFormGroup!: FormGroup;
+
+  @Output() createOrderResponse = new EventEmitter<CreateOrderResponse>();
 
   createForm(): void {
     this.orderFormGroup = this.formBuilder.group({
@@ -36,8 +42,14 @@ export class OrderFormComponent {
 
   sendForm(): void {
     if (!this.orderFormGroup.valid) {
+      this.orderFormGroup.markAllAsTouched();
       return;
     }
+    this.order = this.orderFormGroup.value;
+    this.orderService.createOrder(this.order).subscribe((res: CreateOrderResponse) => {
+      console.log(res);
+      this.createOrderResponse.emit(res);
+    });
   }
 
   onInput(inputValue: string): void {
